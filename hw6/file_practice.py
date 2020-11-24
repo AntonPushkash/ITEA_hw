@@ -28,25 +28,13 @@
 # Прочитать весь файл и вывести содержимое
 
 
-
 # 2.
-# with open('file_practice.txt') as f:
-#     print(f.read())
-#     f.seek(0)
-#     print(f.read(5))
-
-# file = open('file_practice.txt', 'r')
-# print(file.read())
-# file.seek(0)
-# print(file.read(5))
-
+with open('file_practice.txt') as f:
+    f.seek(0)
+    print(f.read(5))
 
 # 3.
-file_f = open('files/text.txt', 'r')
-print(file_f.read())
-
 i_counter = e_counter = 0
-
 with open('files/text.txt') as f:
     data = f.read()
     for l in data:
@@ -56,10 +44,21 @@ with open('files/text.txt') as f:
             e_counter += 1
     
 if i_counter > e_counter:
-    edited_i = open('files/text.txt', 'r').read().replace('i', 'e')
-    print(edited_i)
+    edited = open('files/text.txt', 'r').read().replace('i', 'e')
 else:
-    edited_e = open('files/text.txt', 'r').read().replace('e', 'i')
-    print(edited_e)
+    edited = open('files/text.txt', 'r').read().replace('e', 'i')
 
-print(i_counter, e_counter)
+with open('files/text.txt', 'a+') as f:
+    f.write(edited)
+
+# 4.
+with open('files/text.txt', 'a+') as f:
+    f.write('*some pasted text*')
+    pos = (f.tell())
+    if pos % 2 == 0:
+        f.write('\nthe end')
+    else:
+        f.write('\nbye')
+
+with open('files/text.txt') as f:
+    print(f.read())
