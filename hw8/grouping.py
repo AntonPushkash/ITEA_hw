@@ -39,11 +39,21 @@ def tmp_dict(n):
     return a
 
 
+def mod_dict(a):
+    b = {}
+    for k, v in a.items():
+        for i in v:
+            values = b.get(i, [])
+            values.append(k)
+            b[i] = values
+    return b
+
+
 def main():
     n = int(input('Groups qty: '))
     dict_1 = tmp_dict(n)
     print(dict_1)
-    # dict_2 = mod_dict(dict_1)
+    dict_2 = mod_dict(dict_1)
+    print(dict_2)
+
 main()
-
-
