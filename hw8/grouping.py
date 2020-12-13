@@ -30,6 +30,8 @@
         ...
     }
 """
+
+
 def tmp_dict(n):
     a = {}
     for gr_num in range(n):
@@ -55,5 +57,6 @@ def main():
     print(dict_1)
     dict_2 = mod_dict(dict_1)
     print(dict_2)
+
 
 main()

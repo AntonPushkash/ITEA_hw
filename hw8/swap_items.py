@@ -16,3 +16,18 @@
         а точнее тот, который можно захешировать функцией hash()
 
 """
+
+def swap_items(a):
+    return {v: k for k, v in a.items()}
+
+
+def main():
+    key_list = list((input('Enter the keys: ')).split())
+    values_list = list((input('Enter the values: ')).split())
+    a = dict(zip(key_list, values_list))
+    print(a)
+    print(swap_items(a))
+
+main()
+
+assert swap_items({'user1': 'value1', 'user2': 'value2'}) == {'value1': 'user1', 'value2': 'user2'}
