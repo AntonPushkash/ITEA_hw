@@ -23,19 +23,17 @@
         2. Фролов
         3. Иванов
 """
-def swap_items(a):
-    return {v: k for k, v in a.items()}
+def sort_keys(d):
+    for i in [i[0] for i in (sorted(d.items(), key=lambda x: x[1]))]:
+    print(i)
 
 
 def main():
     n = int(input('Enter the quantity: '))
     d = {}
-    for key, value in a.items():
-        print(key, value)
-    key_list = list((input('Enter the keys: ')).split())
-    values_list = list((input('Enter the values: ')).split())
-    a = dict(zip(key_list, values_list))
-    print(a)
-    print(swap_items(a))
+    for i in range(n):
+        affort = list((input('Enter the surname and score: ')).split())
+        d.update({affort[0]: affort[1:]})
+    print(d)
 
 main()
