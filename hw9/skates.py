@@ -22,5 +22,3 @@ sizes = [int(s) for s in input('Available sizes: ').split()]
 legs = [int(s) for s in input('Legs sizes: ').split()]
 result = list(set(sizes) & set(legs))
 print(len(result))
-
-print(list(filter(lambda x: x == [i for i in sizes], legs)))
