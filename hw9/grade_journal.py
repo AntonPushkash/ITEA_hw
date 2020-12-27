@@ -23,9 +23,11 @@
         2. Фролов
         3. Иванов
 """
+
+
 def sort_keys(d):
-    for i in [i[0] for i in (sorted(d.items(), key=lambda x: x[1]))]:
-    print(i)
+    c = sorted(d.items(), key=lambda x: x[1])
+    return ('\n'.join([i for i in [i[0] for i in c]]))
 
 
 def main():
@@ -34,6 +36,9 @@ def main():
     for i in range(n):
         affort = list((input('Enter the surname and score: ')).split())
         d.update({affort[0]: affort[1:]})
-    print(d)
+
+    modified_list = sort_keys(d)
+    print(modified_list)
+
 
 main()
